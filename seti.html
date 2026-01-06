@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои соцсети | Портфолио</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        /* Стили для страницы соцсетей */
+        .socials-wrapper {
+            position: relative;
+            z-index: 20;
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            padding: 10px 20px;
+            border: 1px solid #ffffff;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(-5px);
+        }
+        
+        .back-button i {
+            margin-right: 10px;
+        }
+        
+        h1 {
+            color: #ffffff;
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 60px;
+            font-size: 2.8rem;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+        
+        /* Контейнер для кнопок соцсетей */
+        .socials-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px 0;
+        }
+        
+        /* Кнопка соцсети */
+        .social-btn {
+            width: 160px;
+            height: 160px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            border-radius: 20px;
+            background: rgba(26, 26, 26, 0.7);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s ease;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.7s ease;
+        }
+        
+        .social-btn:hover::before {
+            left: 100%;
+        }
+        
+        .social-btn:hover {
+            transform: translateY(-10px) scale(1.05);
+            border-color: #ffffff;
+            box-shadow: 
+                0 15px 30px rgba(255, 255, 255, 0.15),
+                0 0 40px rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Цвета для разных соцсетей при наведении */
+        .social-tiktok:hover { background: rgba(0, 0, 0, 0.8); border-color: #00f2ea; }
+        .social-telegram:hover { background: rgba(0, 136, 204, 0.2); border-color: #0088cc; }
+        .social-github:hover { background: rgba(255, 255, 255, 0.1); border-color: #ffffff; }
+        .social-pinterest:hover { background: rgba(189, 8, 28, 0.2); border-color: #bd081c; }
+        
+        /* Иконки соцсетей */
+        .social-icon {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-btn:hover .social-icon {
+            transform: scale(1.2);
+        }
+        
+        /* Цвета иконок */
+        .social-icon.tiktok { color: #00f2ea; }
+        .social-icon.telegram { color: #0088cc; }
+        .social-icon.github { color: #ffffff; }
+        .social-icon.pinterest { color: #bd081c; }
+        
+        /* Текст под иконкой */
+        .social-name {
+            color: #ffffff;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .socials-grid {
+                gap: 20px;
+            }
+            
+            .social-btn {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .social-icon {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .socials-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .social-btn {
+                width: 200px;
+                height: 200px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Верхняя бегущая строка -->
+    <div class="marquee top-marquee">
+        <div class="marquee-content">
+            <span>ага</span> | <span>попался</span> | <span>щас мы тебя</span> | <span>вычислим</span> | <span>кто это тут у нас</span> | <span>ого</span> | <span>капец тебе</span> |
+            <span>ага</span> | <span>попался</span> | <span>щас мы тебя</span> | <span>вычислим</span> | <span>кто это тут у нас</span> | <span>ого</span> | <span>капец тебе</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Основной блок -->
+        <div class="socials-wrapper">
+            <!-- Кнопка "Назад" -->
+            <a href="osnova.html" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                <span>на главную</span>
+            </a>
+
+            <!-- Заголовок -->
+            <h1>Мои соцсети</h1>
+
+            <!-- Кнопки соцсетей -->
+            <div class="socials-grid">
+                <!-- TikTok -->
+                <a href="https://tiktok.com/@schizodelica333" target="_blank" class="social-btn social-tiktok">
+                    <i class="fab fa-tiktok social-icon tiktok"></i>
+                    <span class="social-name">TikTok</span>
+                </a>
+                
+                <!-- Telegram -->
+                <a href="https://t.me/schizodelica" target="_blank" class="social-btn social-telegram">
+                    <i class="fab fa-telegram social-icon telegram"></i>
+                    <span class="social-name">Telegram</span>
+                </a>
+                
+                <!-- GitHub -->
+                <a href="https://github.com/EchoesSchizo" target="_blank" class="social-btn social-github">
+                    <i class="fab fa-github social-icon github"></i>
+                    <span class="social-name">GitHub</span>
+                </a>
+                
+                <!-- Pinterest -->
+                <a href="https://pinterest.com/HitoribocchiSchizo/" target="_blank" class="social-btn social-pinterest">
+                    <i class="fab fa-pinterest social-icon pinterest"></i>
+                    <span class="social-name">Pinterest</span>
+                </a>
+            </div>
+            
+            <!-- Поясняющий текст -->
+            <p style="color: #aaa; margin-top: 50px; font-size: 1rem;">
+                Ещкере
+            </p>
+        </div>
+
+        <!-- Фоновая сетка -->
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Нижняя бегущая строка -->
+    <div class="marquee bottom-marquee">
+        <div class="marquee-content reverse">
+            <span>ага</span> | <span>попался</span> | <span>щас мы тебя</span> | <span>вычислим</span> | <span>кто это тут у нас</span> | <span>ого</span> | <span>капец тебе</span> |
+            <span>ага</span> | <span>попался</span> | <span>щас мы тебя</span> | <span>вычислим</span> | <span>кто это тут у нас</span> | <span>ого</span> | <span>капец тебе</span>
+        </div>
+    </div>
+</body>
+</html>

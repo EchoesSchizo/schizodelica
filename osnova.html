@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио дизайнера</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключаем иконки -->
+    <link rel="stylesheet" href="ico-oe.png">
+    <!-- Подключаем шрифт для "телевизионного" эффекта -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Бегущая строка (верхняя) -->
+    <div class="marquee top-marquee">
+        <div class="marquee-content">
+            <span>дизайн</span> | <span>свага</span> | <span>вайб</span> | <span>графика</span> | <span>арт</span> | <span>креатив</span> | <span>стиль</span> |
+            <span>дизайн</span> | <span>свага</span> |<span>вайб</span> | <span>графика</span> | <span>арт</span> | <span>креатив</span> | <span>стиль</span>
+        </div>
+    </div>
+
+    <!-- Контейнер сайта -->
+    <div class="container">
+        <!-- Центральное лого -->
+        <div class="logo-center">
+            <img src="ico-oe.png" alt="Логотип" class="logo-image" id="hue-logo">
+            <div class="logo-glow"></div>
+        </div>
+
+        <!-- Кнопки с абсолютным позиционированием -->
+        <nav class="chaotic-nav">
+            <a href="about.html" class="chaotic-btn btn-1">
+                <i class="fas fa-user"></i>
+                <span>обо мне</span>
+            </a>
+            
+            <a href="works.html" class="chaotic-btn btn-2">
+                <i class="fas fa-briefcase"></i>
+                <span>мои работы</span>
+            </a>
+            
+            <a href="https://ru.pinterest.com/pin/58546863902083656/" target="_blank" class="chaotic-btn btn-3">
+                <i class="fas fa-cat"></i>
+                <span>котосова</span>
+            </a>
+            
+            <a href="seti.html" target="_blank" class="chaotic-btn btn-4">
+                <i class="fas fa-share-alt"></i>
+                <span>мои соцсети</span>
+            </a>
+        </nav>
+
+        <!-- Декоративные элементы -->
+
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Бегущая строка (нижняя) -->
+    <div class="marquee bottom-marquee">
+        <div class="marquee-content reverse">
+            <span>стиль</span> | <span>креатив</span> | <span>арт</span> | <span>графика</span> | <span>вайб</span> | <span>свага</span> | <span>дизайн</span> |
+            <span>стиль</span> | <span>креатив</span> | <span>арт</span> | <span>графика</span> | <span>вайб</span> | <span>свага</span> | <span>дизайн</span>
+        </div>
+    </div>
+
+    <!-- Простой скрипт для эффекта перелива лого -->
+    <script>
+        const logo = document.getElementById('hue-logo');
+        logo.addEventListener('mouseenter', () => {
+            logo.style.animation = 'hueRotate 2s linear infinite';
+        });
+        logo.addEventListener('mouseleave', () => {
+            logo.style.animation = 'none';
+        });
+    </script>
+</body>
+</html>

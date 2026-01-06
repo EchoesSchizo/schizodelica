@@ -1,0 +1,304 @@
+/* Базовые настройки и цветовая палитра */
+:root {
+    --color-dark: #111216;
+    --color-accent1: #ffffff; /* Главный акцент теперь БЕЛЫЙ */
+    --color-accent2: #f0f0f0; /* Второстепенный акцент — светло-серый */
+    --color-black: #000000;
+    --color-white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-dark);
+    color: var(--color-accent2);
+    font-family: 'Share Tech Mono', monospace;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.container {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Стили бегущих строк */
+.marquee {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px 0;
+    border-top: 1px solid var(--color-accent1);
+    border-bottom: 1px solid var(--color-accent1);
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.top-marquee {
+    border-bottom: 2px solid var(--color-accent1);
+    box-shadow: 0 0 15px rgba(188, 196, 244, 0.3);
+}
+
+.bottom-marquee {
+    border-top: 2px solid var(--color-accent1);
+    border-bottom: none;
+    box-shadow: 0 0 15px rgba(188, 196, 244, 0.3);
+}
+
+.marquee-content {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 30s linear infinite;
+}
+
+.marquee-content.reverse {
+    animation: marquee-reverse 25s linear infinite;
+}
+
+.marquee-content span {
+    color: var(--color-accent1);
+    text-shadow: 0 0 8px rgba(188, 196, 244, 0.7);
+    margin: 0 20px;
+    position: relative;
+}
+
+.marquee-content span::after {
+    position: absolute;
+    right: -18px;
+    color: var(--color-accent2);
+    opacity: 0.5;
+    font-weight: 300;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
+
+/* Центральное лого */
+.logo-center {
+    position: relative;
+    z-index: 5;
+    margin: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(0 0 20px rgba(188, 196, 244, 0.5));
+}
+
+.logo-image {
+    max-width: 300px;
+    max-height: 300px;
+    z-index: 6;
+    transition: filter 0.3s ease;
+}
+
+/* Эффект переливания цветов при наведении */
+@keyframes hueRotate {
+    0% { filter: hue-rotate(0deg) drop-shadow(0 0 15px var(--color-accent1)); }
+    100% { filter: hue-rotate(360deg) drop-shadow(0 0 20px var(--color-accent2)); }
+}
+
+.logo-glow {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, var(--color-accent1) 0%, transparent 70%);
+    z-index: 4;
+    opacity: 0.4;
+    border-radius: 50%;
+    animation: pulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.3; transform: scale(0.95); }
+    100% { opacity: 0.6; transform: scale(1.05); }
+}
+
+/* Контейнер для хаотично расположенных кнопок */
+.chaotic-nav {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Чтобы не перекрывать клики по лого */
+    z-index: 10;
+}
+
+.chaotic-btn {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    background: rgba(17, 18, 22, 0.85);
+    border: 2px solid var(--color-accent1);
+    border-radius: 20px;
+    color: var(--color-accent2);
+    text-decoration: none;
+    font-size: 1rem;
+    text-align: center;
+    padding: 15px;
+    pointer-events: auto; /* Возвращаем возможность кликать */
+    transition: all 0.4s ease;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    z-index: 11;
+}
+
+.chaotic-btn i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--color-accent1);
+}
+
+.chaotic-btn span {
+    display: block;
+    font-weight: bold;
+}
+
+/* Позиции для хаотичного расположения кнопок */
+.btn-1 { top: 20%; left: 15%; }
+.btn-2 { top: 15%; right: 20%; }
+.btn-3 { bottom: 25%; left: 10%; }
+.btn-4 { bottom: 20%; right: 15%; }
+
+/* Эффекты при наведении на кнопки */
+.chaotic-btn:hover {
+    background: rgba(188, 196, 244, 0.15);
+    border-color: var(--color-accent2);
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 0 25px rgba(188, 196, 244, 0.7);
+}
+
+.chaotic-btn:hover i {
+    color: var(--color-accent2);
+    animation: iconFloat 0.8s ease infinite alternate;
+}
+
+@keyframes iconFloat {
+    from { transform: translateY(0); }
+    to { transform: translateY(-5px); }
+}
+
+/* Декоративные частицы */
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--color-accent1) 0%, transparent 70%);
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.p1 { width: 120px; height: 120px; top: 10%; left: 5%; animation: drift 25s infinite linear; }
+.p2 { width: 80px; height: 80px; bottom: 15%; right: 8%; animation: drift 30s infinite linear reverse; }
+.p3 { width: 150px; height: 150px; top: 60%; left: 80%; animation: drift 35s infinite linear; }
+
+@keyframes drift {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(100px, 100px) rotate(360deg); }
+}
+
+/* Декоративная сетка на фоне */
+.grid-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(188, 196, 244, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(188, 196, 244, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .marquee {
+        font-size: 1rem;
+        padding: 12px 0;
+    }
+    
+    .logo-image {
+        max-width: 220px;
+        max-height: 220px;
+    }
+    
+    .logo-glow {
+        width: 240px;
+        height: 240px;
+    }
+    
+    .chaotic-btn {
+        width: 100px;
+        height: 100px;
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+    
+    .chaotic-btn i {
+        font-size: 1.7rem;
+    }
+    
+    /* На маленьких экранах делаем кнопки менее хаотичными */
+    .btn-1 { top: 15%; left: 5%; }
+    .btn-2 { top: 15%; right: 5%; }
+    .btn-3 { bottom: 15%; left: 5%; }
+    .btn-4 { bottom: 15%; right: 5%; }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+    .logo-image {
+        max-width: 180px;
+        max-height: 180px;
+    }
+    
+    .chaotic-btn {
+        width: 85px;
+        height: 85px;
+        font-size: 0.8rem;
+    }
+    
+    .chaotic-btn i {
+        font-size: 1.5rem;
+    }
+    
+    .marquee {
+        font-size: 0.9rem;
+    }
+}
+.work-image-link {
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    overflow: hidden; /* Для сохранения эффекта наведения */
+    border-radius: 10px 10px 0 0; /* Скругления как у карточки */
+}
+
+/* Перенесите стили наведения с .work-item на .work-image-link */
+.work-image-link:hover .work-image {
+    transform: scale(1.05);
+}

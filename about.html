@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обо мне | Портфолио</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        /* Дополнительные стили для страницы с контентом */
+        .content-wrapper {
+            position: relative;
+            z-index: 20;
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background: rgba(26, 26, 26, 0.85);
+            border: 1px solid var(--color-accent1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+        }
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            color: var(--color-accent1);
+            text-decoration: none;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            padding: 10px 20px;
+            border: 1px solid var(--color-accent1);
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(-5px);
+        }
+        .back-button i {
+            margin-right: 10px;
+        }
+        h1 {
+            color: var(--color-accent1);
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 30px;
+            font-size: 2.8rem;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+        .about-text {
+            line-height: 1.8;
+            font-size: 1.2rem;
+            color: var(--color-accent2);
+        }
+        .about-text p {
+            margin-bottom: 25px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Верхняя бегущая строка (такая же, как на главной) -->
+    <div class="marquee top-marquee">
+        <div class="marquee-content">
+            <span>кто?</span> | <span>а?</span> | <span>что?</span> | <span>где?</span> | <span>чего?</span> | <span>ау?</span> | <span>не слышу</span> |
+            <span>кто?</span> | <span>а?</span> | <span>вайб</span> | <span>где?</span> | <span>чего?</span> | <span>ау?</span> | <span>не слышу</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Основной контент страницы -->
+        <div class="content-wrapper">
+            <!-- Кнопка "Назад" -->
+            <a href="osnova.html" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                <span>на главную</span>
+            </a>
+
+            <!-- Заголовок и текст страницы -->
+            <h1>Обо мне</h1>
+            <div class="about-text">
+                <p>Я молодой дизайнер, создающий графику в Photoshop. Работаю с постерами, обработкой фото и вдохновляюсь цифровым искусством. Использую связку классических инструментов и нейросетей, чтобы ваша идея превратилась в свагу.</p>
+                <!-- Сюда можно добавить больше текста, список навыков, программы и т.д. -->
+            </div>
+        </div>
+
+        <!-- Фоновые элементы (как на главной) -->
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Нижняя бегущая строка -->
+    <div class="marquee bottom-marquee">
+        <div class="marquee-content reverse">
+            <span>кто?</span> | <span>а?</span> | <span>что?</span> | <span>где?</span> | <span>чего?</span> | <span>ау?</span> | <span>не слышу</span> |
+            <span>кто?</span> | <span>а?</span> | <span>вайб</span> | <span>где?</span> | <span>чего?</span> | <span>ау?</span> | <span>не слышу</span>
+        </div>
+    </div>
+</body>
+</html>

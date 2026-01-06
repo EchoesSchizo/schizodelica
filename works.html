@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои работы | Портфолио</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        /* Стили для страницы работ */
+        .works-wrapper {
+            position: relative;
+            z-index: 20;
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 40px 20px;
+        }
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            color: #ffffff; /* Белый цвет */
+            text-decoration: none;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            padding: 10px 20px;
+            border: 1px solid #ffffff; /* Белая обводка */
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(-5px);
+        }
+        .back-button i {
+            margin-right: 10px;
+        }
+        h1 {
+            color: #ffffff; /* Белый цвет */
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 40px;
+            font-size: 2.8rem;
+            text-align: center;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+        /* Сетка галереи */
+        .gallery-grid {
+             display: flex;
+            flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+            justify-content: center; /* Центрируем элементы по горизонтали */
+            gap: 30px; /* Отступ между элементами */
+            padding: 20px 0;
+        }
+        /* Стиль для каждого элемента работы */
+        /* ВАЖНО: Замените ВЕСЬ блок стилей для .work-item и .work-image */
+
+        .work-item {
+          width: calc(33.333% - 20px);
+          min-width: 280px;
+          position: relative;
+         border-radius: 12px;
+         overflow: hidden;
+          background: rgba(26, 26, 26, 0.7);
+          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          border: 2px solid rgba(255, 255, 255, 0.7);
+         box-shadow: 
+              0 5px 20px rgba(0, 0, 0, 0.5),
+             inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+         cursor: pointer;
+         display: flex;
+         flex-direction: column;
+          height: auto; /* Убираем фиксированную высоту */
+        }
+
+        .work-image-container {
+          width: 100%;
+         height: 250px; /* Фиксированная высота для контейнера */
+          overflow: hidden;
+          display: flex;
+        align-items: center;
+          justify-content: center;
+          background: rgba(0, 0, 0, 0.3); /* Фон на случай пустых областей */
+        }
+
+        .work-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* ВАЖНО: contain вместо cover */
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        /* Обновляем селектор для hover эффекта */
+        .work-item:hover .work-image {
+            transform: scale(1.08); /* Чуть меньше масштаб */
+        }
+        .work-info {
+            padding: 20px;
+            text-align: center;
+        }
+        .work-title {
+            color: #ffffff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .work-desc {
+            color: #f0f0f0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+        /* Адаптивность для мобильных */
+        @media (max-width: 900px) {
+            .work-item {
+                width: calc(50% - 15px); /* 2 элемента в ряд */
+            }
+        }
+        @media (max-width: 600px) {
+            .work-item {
+                width: 100%; /* 1 элемент в ряд */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Верхняя бегущая строка -->
+    <div class="marquee top-marquee">
+        <div class="marquee-content">
+            <span>хмм</span> | <span>интересно</span> | <span>что то в этом есть</span> | <span>нормально</span> | <span>ого</span> | <span>ничего себе</span> | <span>вау</span> |
+            <span>хмм</span> | <span>интересно</span> | <span>что то в этом есть</span> | <span>нормально</span> | <span>ого</span> | <span>ничего себе</span> | <span>вау</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Основной блок с галереей -->
+        <div class="works-wrapper">
+            <!-- Кнопка "Назад" -->
+            <a href="osnova.html" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                <span>на главную</span>
+            </a>
+
+            <!-- Заголовок страницы -->
+            <h1>Мои работы</h1>
+
+            <!-- Сетка с работами -->
+            <div class="gallery-grid">
+                <!-- Работа 1 -->
+                <div class="work-item">
+                    <a href="фото1.jpg" target="_blank" class="work-image-link">
+                    <img src="фото11.jpg" alt="Описание работы 1" class="work-image">
+                    </a>
+                </div>
+
+                <!-- Работа 2 -->
+                <div class="work-item">
+                    <a href="фото2.jpg" target="_blank" class="work-image-link">
+                    <img src="фото22.jpg" alt="Описание работы 1" class="work-image">
+                    </a>
+                </div>
+
+                <!-- Работа 3 -->
+                <div class="work-item">
+                    <a href="фото3.jpg" target="_blank" class="work-image-link">
+                    <img src="фото33.jpg" alt="Описание работы 1" class="work-image">
+                    </a>
+                </div>
+
+                <!-- Работа 4 -->
+                <div class="work-item">
+                    <a href="фото4.jpg" target="_blank" class="work-image-link">
+                    <img src="фото44.jpg" alt="Описание работы 1" class="work-image">
+                    </a>
+                </div>
+
+                <!-- Работа 5 -->
+                <div class="work-item">
+                    <a href="фото5.jpg" target="_blank" class="work-image-link">
+                    <img src="фото55.jpg" alt="Описание работы 1" class="work-image">
+                    </a>
+                </div>
+
+                <!-- Работа 6 -->
+                <div class="work-item">
+                    <a href="фото6.jpg" target="_blank" class="work-image-link">
+                    <img src="фото66.jpg" alt="Описание работы 1" class="work-image">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Фоновая сетка (как на главной) -->
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Нижняя бегущая строка -->
+    <div class="marquee bottom-marquee">
+        <div class="marquee-content reverse">
+            <span>хмм</span> | <span>интересно</span> | <span>что то в этом есть</span> | <span>нормально</span> | <span>ого</span> | <span>ничего себе</span> | <span>вау</span> |
+            <span>хмм</span> | <span>интересно</span> | <span>что то в этом есть</span> | <span>нормально</span> | <span>ого</span> | <span>ничего себе</span> | <span>вау</span>
+        </div>
+    </div>
+</body>
+</html>
